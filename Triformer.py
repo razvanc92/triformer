@@ -1,4 +1,5 @@
 import math
+
 import torch
 import torch.nn as nn
 from torch.nn import init
@@ -199,7 +200,7 @@ class WeightGenerator(nn.Module):
                 nn.Tanh(),
                 nn.Linear(64, 64),
                 nn.Tanh(),
-                nn.Linear(64, 5*5)
+                nn.Linear(64, 5 * 5)
             ])
             self.P = nn.ParameterList(
                 [nn.Parameter(torch.Tensor(in_dim, self.mem_dim), requires_grad=True) for _ in
@@ -238,5 +239,3 @@ class WeightGenerator(nn.Module):
             return weights, bias
         else:
             return self.P, self.B
-
-
