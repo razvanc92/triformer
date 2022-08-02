@@ -4,10 +4,10 @@ import torch.nn as nn
 from torch.nn import init
 
 
-class PA(nn.Module):
+class Triformer(nn.Module):
     def __init__(self, device, num_nodes, input_dim, output_dim, channels, dynamic, lag,
                  horizon, patch_sizes, supports, mem_dim):
-        super(PA, self).__init__()
+        super(Triformer, self).__init__()
         self.factorized = True
         print('Predicting {} steps ahead'.format(horizon))
         self.num_nodes = num_nodes
